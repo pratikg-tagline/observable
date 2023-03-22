@@ -1,0 +1,38 @@
+<!-- <p>combineletest works! namesource:: {{ namesource | json }}</p> -->
+
+<div class="row">
+  <div class="col-md-3 pr-4">
+    <strong>Names</strong>
+    <hr />
+           
+    <select class="form-select" #name>
+      <ng-container *ngFor="let item of namesource">
+        <option [value]="item">{{ item }}</option>
+      </ng-container>
+    </select>
+
+    <strong>Colors</strong>
+    <hr />
+ 
+    <select class="form-control" #color>
+      <option *ngFor="let item of colorsource" [value]="item">
+        {{ item }}
+      </option>
+    </select>
+  </div>
+
+  <div class="col-md-9">
+    <strong>combinelatest</strong>
+    <hr />
+    <div class="wrapper mx-2" id="elContainer"></div>
+
+    <!-- <strong>with latest form</strong>
+        <hr>
+        <div class="wrapper">
+            <div class="red">pratik</div>
+            <div  class="green">jaydip</div>
+            <div  class="blue">dharmik</div>
+
+        </div> -->
+  </div>
+</div>

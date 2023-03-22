@@ -1,0 +1,24 @@
+<!-- container -->
+<ul>
+    <ng-container >
+    <li  *ngFor= "let item of data" style="margin: 10px; background-color: aqua;" >
+          {{item.name}} </li>
+   </ng-container>
+</ul>
+
+
+
+<!-- content -->
+
+<h1>Child Info</h1>
+<ng-content select="[input],[form-field]"></ng-content>
+
+<ng-content select="[first]"></ng-content>
+<ng-content select="[second]"></ng-content>
+  
+<!-- timeout -->
+<button type="button" (click)="startTime()">Activate alert in 5 second</button>
+
+<!-- output -->
+
+<button (click)='check("thank you")'>thank you parent</button>  

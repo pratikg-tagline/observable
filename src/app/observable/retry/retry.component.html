@@ -1,0 +1,41 @@
+
+<div >
+    <button class="btn btn-outline-primary d-block mx-auto mt-5" (click)="fetchingData()"> 
+        <span *ngIf="fetching">{{fetching?'fetching Data':'fetch data'}}</span>
+       </button>
+
+       <p>
+           Stasus :<strong [ngClass]="{'text-success':status == 'Data Fetched',
+           'text-danger':status == 'Problem Fetching Data'}"> {{status}}</strong>
+           <span *ngIf="fetching" class="spinner-grow text-warning" role="status">
+            <span class="sr-only"></span>
+          </span>
+       </p>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+   <table class="table" *ngIf="person!=null">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Website</th>
+    </tr>
+    <tr *ngFor="let data of person">
+        <td>{{data.id}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.username}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.website}}</td>   
+    </tr>
+    
+   </table>
+  
+    </div>
+    <!-- <div class="col-md-6">
+
+    </div> -->
+</div>

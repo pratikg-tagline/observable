@@ -1,0 +1,42 @@
+<p>sharereplay works!</p>
+
+<div class="row">
+  <div class="col">
+    <h3>add video</h3>
+  </div>
+  
+</div>
+<hr />
+<div class="row justify-content-center" >
+  <div class="col-md-4">
+    <input type="text" class="form-control form-control-lg" #video />
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-outline-success" (click)="onvideoAdd(video.value)">
+      Add Video
+    </button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-md-4">
+    <strong>User -01</strong>
+    <hr />
+    <ul class="video-list">
+      <li>
+        <strong>video :</strong>{{asyncvideoEmit}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <strong>click to Complete</strong>
+    <hr />
+    <button
+      class="btn btn-outline-success"
+   (click)="onClick()"
+    >
+     Complete subscription
+    </button>
+  </div>
+ 
+</div>

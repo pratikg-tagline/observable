@@ -1,0 +1,65 @@
+<p>sharereplay works!</p>
+
+<div class="row">
+  <div class="col">
+    <h3>add video</h3>
+  </div>
+  <div class="col text-right">
+   <button class="btn btn-outline-warning" (click)="toggleMethod()">Toggle Method</button>
+  </div>
+</div>
+<hr />
+<div class="row justify-content-center" *ngIf="!methodInterval">
+  <div class="col-md-4">
+    <input type="text" class="form-control form-control-lg" #video />
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-outline-success" (click)="onvideoAdd(video.value)">
+      Add Video
+    </button>
+  </div>
+</div>
+<hr *ngIf="!methodInterval"/>
+<div class="row">
+  <div class="col-md-4">
+    <strong>User -01</strong>
+    <hr />
+    <ul class="video-list">
+      <li *ngFor="let item of userlist01">
+        <strong>video :</strong>{{ item }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <strong>User -02</strong>
+    <hr />
+    <ul class="video-list">
+      <li *ngFor="let item of userlist02">
+        <strong>video :</strong>{{ item }}
+      </li>
+    </ul>
+    <button
+      [ngClass]="subscribrmode2 ? 'btn-danger' : 'btn-outline-success'"
+      class="btn"
+      (click)="user2subscribes()"
+    >
+      {{ subscribrmode2 ? "UnSubscribe" : "Subscribe" }}
+    </button>
+  </div>
+  <div class="col-md-4">
+    <strong>User -03</strong>
+    <hr />
+    <ul class="video-list">
+      <li *ngFor="let item of userlist03">
+        <strong>video :</strong>{{ item }}
+      </li>
+    </ul>
+    <button
+      [ngClass]="subscribrmode3 ? 'btn-danger' : 'btn-outline-success'"
+      class="btn"
+      (click)="user3subscribes()"
+    >
+      {{ subscribrmode3 ? "UnSubscribe" : "Subscribe" }}
+    </button>
+  </div>
+</div>
